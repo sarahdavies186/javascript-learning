@@ -1,0 +1,4 @@
+node_modules
+./candy/node_modules
+./fizzbuzz/node_modules
+./thermostat/node_modules
