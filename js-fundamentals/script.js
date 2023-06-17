@@ -47,4 +47,27 @@ console.log(BMIMark);
 console.log(BMIJohn);
 
 const markHigherBmi = BMIMark > BMIJohn;
-console.log(markHigherBmi);
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})`);
+} else {
+  console.log(`John's (${BMIJohn}) is higher than Mark's BMI (${BMIMark})`);
+}
+
+if (population > 33) {
+  console.log(`${country}'s population is above average`);
+} else {
+  console.log(`${country}'s population is below average`);
+}
+
+console.log(5 + 6 + "4" + 9 - 4 - 2);
+
+const numNeighbours = Number(
+  prompt("How many neighbour countries does your country have?")
+);
+if (numNeighbours === 1) {
+  console.log("only 1 border");
+} else if (numNeighbours > 1) {
+  console.log("More than 1 border");
+} else {
+  console.log("no borders");
+}
