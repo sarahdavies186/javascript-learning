@@ -189,3 +189,66 @@ if (mark.bmi > john.bmi) {
     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName} (${mark.bmi})`
   );
 }
+
+// for loop
+
+for (let i = 1; i <= 50; i++) {
+  console.log(`Voter number ${i} is currently voting`);
+}
+
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+console.log(percentages);
+console.log(percentages2);
+
+// while loop
+const percentages3 = [];
+let i = 0;
+while (i < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[i]));
+  i++;
+}
+
+console.log(percentages3);
+
+// reverse a string
+
+function reverseString(str) {
+  let r = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    r += str[i];
+  }
+  return r;
+}
+
+console.log(reverseString("sarah"));
+
+// loop within a loop
+
+const listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let j = 0; j < listOfNeighbours[i].length; j++) {
+    console.log(listOfNeighbours[i][j]);
+  }
+}
+
+//reverse an array
+
+const friends = ["joey", "phoebe", "rachel"];
+
+function reverseArray(arr) {
+  const reversedArray = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArray.push(arr[i]);
+  }
+  return reversedArray;
+}
+
+console.log(reverseArray(friends));
