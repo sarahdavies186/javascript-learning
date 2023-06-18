@@ -46,22 +46,22 @@ const describePopulation = function (country, population) {
 
 console.log(describePopulation("china", 1441));
 
-const calcAverage = (a, b, c) => (a + b + c) / 3;
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
 
-let scoreDolphins = calcAverage(44, 23, 71);
-let scoreKoalas = calcAverage(65, 54, 49);
+// let scoreDolphins = calcAverage(44, 23, 71);
+// let scoreKoalas = calcAverage(65, 54, 49);
 
-const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins >= avgKoalas * 2) {
-    console.log(`Dolphins win (${avgDolphins} v ${avgKoalas})`);
-  } else if (avgKoalas >= avgDolphins * 2) {
-    console.log(`Koalas win (${avgKoalas} v ${avgDolphins})`);
-  } else {
-    console.log("No team wins");
-  }
-};
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//   if (avgDolphins >= avgKoalas * 2) {
+//     console.log(`Dolphins win (${avgDolphins} v ${avgKoalas})`);
+//   } else if (avgKoalas >= avgDolphins * 2) {
+//     console.log(`Koalas win (${avgKoalas} v ${avgDolphins})`);
+//   } else {
+//     console.log("No team wins");
+//   }
+// };
 
-checkWinner(scoreDolphins, scoreKoalas);
+// checkWinner(scoreDolphins, scoreKoalas);
 
 //arrays
 
@@ -102,15 +102,15 @@ console.log(neighbours);
 
 // TEST DATA: 125, 555, and 44.
 
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(tips);
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(totals);
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(tips);
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(totals);
 
 //objects
 
@@ -252,3 +252,51 @@ function reverseArray(arr) {
 }
 
 console.log(reverseArray(friends));
+
+// Let's improve Steven's tip calculator even more, this time using loops!
+
+// Your tasks:
+
+// Create an array called bills containing all 10 test bill values.
+
+// Create empty arrays for the tips and the totals (tips and totals)
+
+// Use the calcTip function we wrote before (included in the starter code) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+// TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52.
+
+// BONUS:
+
+// Write a function calcAverage which takes an array called arr as an argument. This function calculates the average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! Here is how to solve it if you feel like it:
+
+// First, you will need to add up all values in the array. To do the addition, start by creating a variable sum that starts at 0. Then loop over the array using a for loop. In each iteration, add the current value to the sum variable. This way, by the end of the loop, you have all values added together.
+
+// To calculate the average, divide the sum you calculated before by the length of the array (because that's the number of elements).
+
+// Call the function with the totals array.
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  totals.push(bills[i] + tips[i]);
+}
+
+console.log(tips);
+console.log(totals);
+
+function calcAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i] / arr.length;
+  }
+  return sum;
+}
+
+console.log(calcAverage(totals));
