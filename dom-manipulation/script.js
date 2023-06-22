@@ -19,12 +19,12 @@ body.append("hello world!");
 //exercise 1
 const fruitList = ["apple", "banana", "tomato"];
 
-const ulElement = document.querySelector("ul");
+const fruitListElement = document.querySelector("ul");
 
 fruitList.forEach((element) => {
   const listEl = document.createElement("li");
   listEl.textContent = element;
-  ulElement.append(listEl);
+  fruitListElement.append(listEl);
 });
 
 //exercise 2
@@ -44,3 +44,34 @@ const lastList = document.querySelectorAll("ul > li:last-child");
 firstList.forEach((firstLi) => (firstLi.textContent = "first"));
 
 lastList.forEach((lastLi) => (lastLi.textContent = "last"));
+
+//exercise 4
+const listApp = document.querySelector("#list-app");
+
+const form = document.createElement("form");
+let userInput = document.createElement("input");
+const submitBtn = document.createElement("input");
+const ulElement = document.createElement("ul");
+
+submitBtn.setAttribute("type", "submit");
+
+form.append(userInput, submitBtn);
+listApp.append(form);
+
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  listApp.prepend(ulElement);
+  const listElement = document.createElement("li");
+  listElement.classList.add("notes-list");
+  ulElement.append(listElement);
+  listElement.textContent = userInput.value;
+  userInput.value = "";
+});
+
+ulElement.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.tagName === "LI") {
+    const newText = prompt("Enter new text:");
+    e.target.textContent = newText;
+  }
+});
