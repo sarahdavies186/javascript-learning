@@ -49,27 +49,24 @@ lastList.forEach((lastLi) => (lastLi.textContent = "last"));
 const listApp = document.querySelector("#list-app");
 
 const form = document.createElement("form");
-let userInput = document.createElement("input");
+const userInput = document.createElement("input");
 const submitBtn = document.createElement("input");
 const ulElement = document.createElement("ul");
 
 submitBtn.setAttribute("type", "submit");
 
 form.append(userInput, submitBtn);
-listApp.append(form);
+listApp.append(ulElement, form);
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  listApp.prepend(ulElement);
   const listElement = document.createElement("li");
-  listElement.classList.add("notes-list");
-  ulElement.append(listElement);
   listElement.textContent = userInput.value;
+  ulElement.append(listElement);
   userInput.value = "";
 });
 
 ulElement.addEventListener("click", function (e) {
-  e.preventDefault();
   if (e.target.tagName === "LI") {
     const newText = prompt("Enter new text:");
     e.target.textContent = newText;
