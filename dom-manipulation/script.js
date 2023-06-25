@@ -8,13 +8,13 @@ function showMessage() {
   message.classList.add("heading");
   messageText.textContent = "hello world";
   messageText.setAttribute("id", "message--text");
-  message.append(messageText);
+  message.insertAdjacentElement("afterBegin", messageText);
   body.append(message);
 }
 
 showMessage();
 
-body.append("hello world!");
+body.prepend("hello world!");
 
 //exercise 1
 const fruitList = ["apple", "banana", "tomato"];
