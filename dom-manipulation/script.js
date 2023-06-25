@@ -102,3 +102,41 @@ userInputSubmitBtn.addEventListener("click", function (e) {
   userText.append(userInputText);
   userInputForm.value = "";
 });
+
+//exercise 7
+
+const buttonDiv = document.querySelector(".button");
+const button = document.createElement("button");
+button.textContent = "Click";
+buttonDiv.append(button);
+
+button.addEventListener("click", function () {
+  button.textContent = "Clicked!";
+});
+
+//exercise 8
+const paragraph = document.createElement("p");
+paragraph.textContent = "hello my name is Sarah";
+const newButton = document.createElement("button");
+newButton.textContent = "submit";
+
+buttonDiv.append(paragraph, newButton);
+
+newButton.addEventListener("click", function () {
+  paragraph.textContent = "text updated!";
+});
+
+//exercise 9
+const myText = document.querySelector(".my-text");
+
+const textButton = document.createElement("button");
+textButton.textContent = "click me";
+myText.append(textButton);
+
+textButton.addEventListener("click", function () {
+  const randomInt = (min, max) =>
+    Math.floor(Math.random() * (max - min + 1) + min);
+  const randomColor = () =>
+    `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+  myText.style.backgroundColor = randomColor();
+});
