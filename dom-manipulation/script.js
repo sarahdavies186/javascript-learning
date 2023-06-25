@@ -41,9 +41,9 @@ divEl.append(imgEl);
 const firstList = document.querySelectorAll("ul > li:first-child");
 const lastList = document.querySelectorAll("ul > li:last-child");
 
-firstList.forEach((firstLi) => (firstLi.textContent = "first"));
+// firstList.forEach((firstLi) => (firstLi.textContent = "first"));
 
-lastList.forEach((lastLi) => (lastLi.textContent = "last"));
+// lastList.forEach((lastLi) => (lastLi.textContent = "last"));
 
 //exercise 4
 const listApp = document.querySelector("#list-app");
@@ -71,4 +71,34 @@ ulElement.addEventListener("click", function (e) {
     const newText = prompt("Enter new text:");
     e.target.textContent = newText;
   }
+});
+
+//exercise 5
+
+const imageList = document.querySelector(".image-list");
+imageList.style.listStyle = "none";
+
+for (let i = 0; i < 10; i++) {
+  const list = document.createElement("li");
+  const img = document.createElement("img");
+  img.src = "https://picsum.photos/200";
+  imageList.append(list);
+  list.append(img);
+}
+
+//exercise 6
+
+const userText = document.querySelector(".user-text");
+
+const userInputForm = document.createElement("input");
+const userInputSubmitBtn = document.createElement("input");
+userInputSubmitBtn.setAttribute("type", "submit");
+
+userText.append(userInputForm, userInputSubmitBtn);
+
+userInputSubmitBtn.addEventListener("click", function (e) {
+  const userInputText = document.createElement("p");
+  userInputText.textContent = userInputForm.value;
+  userText.append(userInputText);
+  userInputForm.value = "";
 });
