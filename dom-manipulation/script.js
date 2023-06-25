@@ -140,3 +140,15 @@ textButton.addEventListener("click", function () {
     `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
   myText.style.backgroundColor = randomColor();
 });
+
+//exercise 10
+const yourListDiv = document.querySelector(".your-list");
+const yourList = document.createElement("ul");
+yourListDiv.append(yourList);
+
+const userNumber = prompt("choose a number");
+for (let i = 0; i < userNumber; i++) {
+  const newList = document.createElement("li");
+  newList.textContent = `${i + 1}`;
+  yourList.append(newList);
+}
