@@ -152,3 +152,13 @@ for (let i = 0; i < userNumber; i++) {
   newList.textContent = `${i + 1}`;
   yourList.append(newList);
 }
+
+//exercise 11
+const namesArr = ["sara", "sar", "sarah"];
+const namesList = document.querySelector(".names-list");
+
+namesArr.forEach((name) => {
+  const item = document.createElement("li");
+  item.textContent = name;
+  namesList.append(item);
+});
