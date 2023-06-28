@@ -9,6 +9,9 @@ function showMessage() {
   messageText.textContent = "hello world";
   messageText.setAttribute("id", "message--text");
   message.insertAdjacentElement("afterBegin", messageText);
+
+  const newMessage = '<p class="message">This is a new message</p>';
+  message.insertAdjacentElement("afterBegin", newMessage);
   body.append(message);
 }
 
@@ -67,6 +70,7 @@ submitBtn.addEventListener("click", function (e) {
 });
 
 ulElement.addEventListener("click", function (e) {
+  console.log(e.target);
   if (e.target.tagName === "LI") {
     const newText = prompt("Enter new text:");
     e.target.textContent = newText;
@@ -161,4 +165,19 @@ namesArr.forEach((name) => {
   const item = document.createElement("li");
   item.textContent = name;
   namesList.append(item);
+});
+
+//exercise 12
+const box = document.querySelector(".box");
+box.style.backgroundColor = "red";
+box.textContent = "a red box";
+
+box.addEventListener("click", function (e) {
+  console.log(this);
+  console.log(e);
+});
+
+box.addEventListener("click", (e) => {
+  console.log(this);
+  console.log(e);
 });
