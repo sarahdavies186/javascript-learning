@@ -10,9 +10,9 @@ function showMessage() {
   messageText.setAttribute("id", "message--text");
   message.insertAdjacentElement("afterBegin", messageText);
 
-  const newMessage = '<p class="message">This is a new message</p>';
-  message.insertAdjacentElement("afterBegin", newMessage);
-  body.append(message);
+  // const newMessage = '<p class="message">This is a new message</p>';
+  // message.insertAdjacentElement("afterBegin", newMessage);
+  // body.append(message);
 }
 
 showMessage();
@@ -230,3 +230,21 @@ select.addEventListener("change", function (e) {
 // append to document body 
  document.body.append(el);
 */
+
+//exercise 13
+
+const container = document.getElementById("container");
+const lastElement = container.lastElementChild;
+const firstElement = container.firstElementChild;
+
+// Reorder elements by moving the last element to the first position
+container.insertBefore(lastElement, firstElement);
+
+// exercise 14
+const originalBox = document.querySelector(".orgBox");
+const destination = document.getElementById("destination");
+
+const clonedBox = originalBox.cloneNode(true);
+clonedBox.textContent = "hello";
+console.log(clonedBox);
+destination.append(clonedBox);
