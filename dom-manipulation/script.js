@@ -181,3 +181,52 @@ box.addEventListener("click", (e) => {
   console.log(this);
   console.log(e);
 });
+
+/*
+//add task
+const addToDo = document.querySelector("#addToDo");
+const ul = document.querySelector("ul");
+console.log(addToDo);
+addToDo.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    const newToDo = document.createElement("li");
+    newToDo.innerHTML = `<span><i class="fa fa-trash"></i></span> ${e.target.value}`;
+    ul.prepend(newToDo);
+    addToDo.value = "";
+  }
+});
+
+//delete task
+
+ul.addEventListener("click", function (e) {
+  if (e.target.matches("span i.fa-trash")) {
+    e.target.parentElement.parentElement.remove();
+  }
+});
+
+// array in dropdown select
+let countries = [
+  "USA",
+  "France",
+  "Italy",
+  "Brazil",
+  "Colombia",
+  "Belize",
+  "Venezuela",
+];
+// your code here
+const select = document.querySelector("#mySelect");
+countries.forEach((country) => {
+  const option = document.createElement("option");
+  option.textContent = country;
+  select.appendChild(option);
+});
+
+select.addEventListener("change", function (e) {
+  alert(e.target.value);
+});
+
+
+// append to document body 
+ document.body.append(el);
+*/
