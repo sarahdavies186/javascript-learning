@@ -27,7 +27,7 @@ const fruitListElement = document.querySelector("ul");
 fruitList.forEach((element) => {
   const listEl = document.createElement("li");
   listEl.textContent = element;
-  fruitListElement.append(listEl);
+  fruitListElement.appendChild(listEl);
 });
 
 //exercise 2
@@ -86,8 +86,8 @@ for (let i = 0; i < 10; i++) {
   const list = document.createElement("li");
   const img = document.createElement("img");
   img.src = "https://picsum.photos/200";
-  imageList.append(list);
-  list.append(img);
+  imageList.appendChild(list);
+  list.appendChild(img);
 }
 
 //exercise 6
@@ -248,3 +248,14 @@ const clonedBox = originalBox.cloneNode(true);
 clonedBox.textContent = "hello";
 console.log(clonedBox);
 destination.append(clonedBox);
+
+//exercise 15
+const helloList = document.querySelector("#hello");
+const helloItems = helloList.getElementsByTagName("li");
+// console.log(helloList);
+// console.log(helloItems);
+const array = [];
+for (let i = 0; i < helloItems.length; i++) {
+  array.push(helloItems[i].textContent);
+}
+console.log(array);
